@@ -1,7 +1,5 @@
 <div class="ui container">
-    <a class="active item">
-    Chatroom
-    </a>
+    <%= link_to "Chatroom", root_path, class: "item"%>
     <a class="item">
     Messages
     </a>
@@ -24,8 +22,6 @@
         <div class="item">Choice 3</div>
         </div>
     </div>
-    <a class="ui item">
-        Logout
-    </a>
+        <%= link_to "Login", login_path, class:"ui item"%>
     </div>
 </div>
