@@ -1,17 +1,17 @@
 <div class="ui container">
-    <%= link_to "Chatroom", root_path, class: "item"%>
-    <a class="item">
-    Messages
-    </a>
-    <div class="ui simple dropdown item">
-        Friends
-        <i class="dropdown icon"></i>
-        <div class="menu">
-        <div class="item">Add Friends</div>
-        <div class="item">All Friends</div>
-        <div class="item">Online Friends</div>
+    <% if logged_in?%>
+        <%= link_to "Chatroom", root_path, class: "item"%>
+        <div class="ui simple dropdown item">
+            Friends
+            <i class="dropdown icon"></i>
+            <div class="menu">
+            <div class="item labeled icon button"><i class="user plus icon"></i>Add Friends</div>
+            <div class="item labeled icon button"><i class="users icon"></i>All Friends</div>
+            <div class="item labeled icon button"><i class="user circle icon"></i>Online Friends</div>
+            </div>
         </div>
-    </div>
+    <% end %>
+    <%= link_to "About Us", about_path, class: "item"%>
     <div class="right menu">
         <div class="item">
             <div class="ui icon input">
