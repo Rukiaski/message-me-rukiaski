@@ -26,20 +26,29 @@
 
     <div class="twelve wide column">
         <div class="ui fluid raised card chatbox">
-            <div class="content">
-                <div class="ui feed">
+            <div class="content" id="messages">
+                <div class="ui feed" id="message-container">
                     <%= render @messages %>
                 </div>
             </div>
             <div class="extra content">
-                <form class="ui reply form">
+                <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f|%>
+                    <div class="field">
+                        <div class="ui fluid icon input">
+                            <%= f.text_field :body, placeholder: "Enter a message"%>
+                            <%= f.button '<i class="large violet location arrow icon"></i>'.html_safe %>
+                        </div>
+                    </div>
+                <% end %>
+                
+                <!--<form class="ui reply form">
                     <div class="field">
                         <div class="ui fluid icon input">
                             <input type="text" placeholder="Enter a message">
                             <i class="bordered inverted violet pencil alternate icon"></i>
                         </div>
                     </div>
-                </form>
+                </form>-->
             </div>
         </div>
     </div>
